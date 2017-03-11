@@ -15,13 +15,42 @@ Things you may want to cover:
 
 # Database
 
-## User
-### table
+### usersテーブル
++ has_many group_users
++ has_many groups through group_users
++ has_many messages
 
-|column|type|not null|unique|foreign_key|index|
+### messagesテーブル
++ belongs_to user
++ belongs_to chat_group
+
+### groupsテーブル
++ has_many messages
++ has_many users through chat_group_users
+
+### group_usersテーブル
++ belongs_to user
++ belongs_to chat_group
 
 
-* Database initialization
+###users テーブル
+|column|
+|:--|
+|id|
+|name|
+|email|
+|password|
+|group_id|
+
+### messagesテーブル
+|column|
+|:--|
+|id|
+|text|
+|image|
+|user_id|
+|roup_id|
+
 
 * How to run the test suite
 
