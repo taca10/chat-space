@@ -26,9 +26,10 @@ Things you may want to cover:
 
 ### groupsテーブル
 + has_many messages
++ has_many group_users
 + has_many users through chat_group_users
 
-### group_usersテーブル
+### group_usersテーブル 中間テーブル
 + belongs_to user
 + belongs_to chat_group
 
@@ -51,6 +52,20 @@ Things you may want to cover:
 |user_id|
 |roup_id|
 
+
+###groups テーブル
+|column|
+|:--|
+|id|
+|name|
+
+
+###groups_users table テーブル
+|column|
+|:--|
+|id|
+|group_id|
+|user_id|
 
 * How to run the test suite
 
