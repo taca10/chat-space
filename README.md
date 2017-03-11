@@ -1,28 +1,11 @@
-== README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
 # Database
-
-
 
 ###users テーブル
 |column               |type    |
 |:-----               |-----   |
 |name                 |string  |
-|devise use(email)    |text    |
-|devise use (password)|text    |
+|devise use           |text    |
+|devise use           |text    |
 
 ### アソシエーション
 + has_many group_users
@@ -53,7 +36,7 @@ Things you may want to cover:
 + has_many group_users
 + has_many users through group_users
 
-###groups_users table テーブル
+###group_user テーブル
 |column                |type   |
 |:--                   |--     |
 |group_id              |integer|
@@ -62,16 +45,3 @@ Things you may want to cover:
 ### アソシエーション 中間テーブル
 + belongs_to user
 + belongs_to group
-
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
