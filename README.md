@@ -1,11 +1,10 @@
 # Database
 
 ###users テーブル
-|column               |type    |
-|:-----               |-----   |
-|name                 |string  |
-|devise use           |text    |
-|devise use           |text    |
+|column               |type    |option    |
+|:-----               |-----   |          |
+|name                 |string  |※add_index|
+###deviseを使う
 
 ### アソシエーション
 + has_many group_users
@@ -14,12 +13,12 @@
 
 
 ### messagesテーブル
-|column               |type    |
-|:--|                 |------  |
-|text|                |text    |
-|image|               |string  |
-|user_id|             |integer |
-|group_id|            |integer |
+|column              |type    |
+|:--                 |------  |
+|text                |text    |
+|image               |string  |
+|user_id             |integer |
+|group_id            |integer |
 
 ### アソシエーション
 + belongs_to user
@@ -27,9 +26,9 @@
 
 
 ###groups テーブル
-|column                |type  |
-|:--                   |----  |
-|name                  |string|
+|column                |type  |option    |
+|:--                   |----  |          |
+|name                 |string |※add_index|
 
 ### アソシエーション
 + has_many messages
@@ -38,7 +37,7 @@
 
 ###group_user テーブル
 |column                |type   |
-|:--                   |--     |
+|:--                   |---    |
 |group_id              |integer|
 |user_id               |integer|
 
