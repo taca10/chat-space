@@ -31,8 +31,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
 
       ##Customize
       t.string   :name, null: false
-
-
       t.timestamps null: false
     end
 
