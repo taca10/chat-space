@@ -18,7 +18,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.datetime :last_sign_in_at
       t.string   :current_sign_in_ip
       t.string   :last_sign_in_ip
-      t.string   :name, null: false
       ## Confirmable
       # t.string   :confirmation_token
       # t.datetime :confirmed_at
@@ -29,6 +28,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
+
+      ##Customize
+      t.string   :name, null: false
 
 
       t.timestamps null: false
