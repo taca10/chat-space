@@ -13,7 +13,7 @@
       height:100px;
 
       &--name {
-        color: #fff;
+        color: #{$color};
         padding-top: 35px;
         padding-left: 20px;
         font-size: 16px;
@@ -25,11 +25,11 @@
         padding-top: 60px;
 
           &--user{
-            color: #fff;
+            color: #{$color};
             font-size: 15px;
           }
           &--index{
-            color: #fff;
+            color: #{$color};
             font-size: 11px;
           }
         }
@@ -40,7 +40,7 @@
     width: calc(100% - #{$side_bar});
     float: left;
     &--header{
-      background-color: #fff;
+      background-color: #{$color};
       padding: 35px 0px 0px 40px;
       height: 65px;
 
@@ -86,7 +86,7 @@
       &--date{
       padding-top: 43px;
       padding-left: 10px;
-      color: #999;
+      color: #{$color};
       float: left;
       font-size: 12px;
       }
@@ -111,12 +111,13 @@
       padding: 20px 25px 25px 35px;
       position: absolute;
       display: flex;
+      padding-top: 20px;
 
       &--center{
         margin-right: 20px;
       }
 
-      textarea{
+      input{
         background-color: white;
         flex: 1;
         width: 850px;
@@ -145,7 +146,6 @@
       }
     }
   }
-
     .fa.fa-photo{
       position: absolute;
       right: 180px;
@@ -173,7 +173,4 @@
       color: white;
       float: right;
     }
-
-
-
 }
