@@ -1,8 +1,7 @@
 @import "./reset";
 @import "./mixin/clearfix";
-@import "./variable/variable";
+@import "./mixin/flash_message";
+@import "./config/variable_color";
 @import "font-awesome";
-@import "./_flash_message";
-@import "./_user";
+@import "./user";
 @import "./groups";
-

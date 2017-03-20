@@ -5,7 +5,9 @@
       %i.fa.fa-pencil-square-o
       %i.fa.fa-gear
       .content__bar--side--left
-        .content__bar--side--left--user iwasaki
+        .content__bar--side--left--group
+          %ul
+            %li iwasaki
         .content__bar--side--left--index yasui
   .content__right
     .content__right--header
@@ -14,10 +16,18 @@
       .content__right--header--name takatoグループ
       .content__right--header--user iwasaki yasui
     .content__right--body
-      .content__right--body--name tabata
-      .content__right--body--date 2017/3/16
-      .content__right--body--message こんにちは
-      .content__right--body--index フットサル
+      .content__right--body--name 
+        %ul
+          %li tabata
+      .content__right--body--date 
+        %ul
+          %li 2017/3/16
+      .content__right--body--message 
+        %ul 
+          %li chat-spaceまだ？
+      .content__right--body--index
+        %ul
+          %li フットサル
     .content__right--bottom
       .content__right--bottom--center
         %input(name="text" type="text"placeholder="type a message")

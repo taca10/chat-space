@@ -13,7 +13,7 @@
       height:100px;
 
       &--name {
-        color: #{$color};
+        color: #{$white};
         padding-top: 35px;
         padding-left: 20px;
         font-size: 16px;
@@ -24,12 +24,12 @@
         padding-left: 20px;
         padding-top: 60px;
 
-          &--user{
-            color: #{$color};
+          &--group{
+            color: #{$white};
             font-size: 15px;
           }
           &--index{
-            color: #{$color};
+            color: #{$white};
             font-size: 11px;
           }
         }
@@ -37,10 +37,10 @@
   }
   &__right{
     height: 100vh;
-    width: calc(100% - #{$side_bar});
+    width: calc(100% - 300px);
     float: left;
     &--header{
-      background-color: #{$color};
+      background-color: #{$white};
       padding: 35px 0px 0px 40px;
       height: 65px;
 
@@ -76,6 +76,7 @@
         background-color: #fafafa;
         width: 100%;
         height: calc(100% - 190px);
+
       &--name{
           padding-top: 40px;
           padding-left: 40px;
@@ -86,7 +87,7 @@
       &--date{
       padding-top: 43px;
       padding-left: 10px;
-      color: #{$color};
+      color: #999;
       float: left;
       font-size: 12px;
       }
