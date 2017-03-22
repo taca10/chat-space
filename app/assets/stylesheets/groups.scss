@@ -28,9 +28,16 @@
             color: #{$white};
             font-size: 15px;
           }
+
           &--index{
             color: #{$white};
             font-size: 11px;
+          }
+
+          &--meeting{
+            color: #{$white};
+            font-size: 15px;
+            padding-top: 40px;
           }
         }
     }
@@ -118,22 +125,6 @@
       float: left;
       }
 
-      &--dating{
-        padding-top: 40px;
-        padding-left: 11px;
-        font-size: 12px;
-        float: left;
-        color: #{$gray};
-      }
-
-      &--hour{
-        float: left;
-        padding-top: 40px;
-        padding-left: 5px;
-        font-size: 12px;
-        color: #999;
-      }
-
     }
 
     &--bottom{
@@ -192,7 +183,7 @@
       top: 32px;
       line-height: 30px;
       font-size: 20px;
-      color: white;
+      color: #{$white};
       float: right;
     }
 
@@ -205,5 +196,4 @@
       color: white;
       float: right;
     }
-
 }

@@ -5,16 +5,18 @@
       %i.fa.fa-pencil-square-o
       %i.fa.fa-gear
       .content__bar--side--left
-        .content__bar--side--left--group
-          %ul
-            %li iwasaki
-        .content__bar--side--left--index yasui
+        %ul
+          %li.content__bar--side--left--group div
+          %li.content__bar--side--left--index yasui
+          %li.content__bar--side--left--meeting フットサル部
+          %li.content__bar--side--left--index iwasaki
   .content__right
     .content__right--header
       .content__right--header--edit
         .content__right--header--edit--form Edit
       .content__right--header--name takatoグループ
-      .content__right--header--user iwasaki yasui
+      %ul
+        %li.content__right--header--user menbers: yasui
     .content__right--body.clearfix 
       %ul
         %li.content__right--body--name tabata
@@ -22,8 +24,9 @@
         %li.content__right--body--time 04:53:06
         %li.content__right--body--message chat-spaceまだ？
         %li.content__right--body--index フットサル
-        %li.content__right--body--dating 2017/3/17
-        %li.content__right--body--hour 05:00:00
+        %li.content__right--body--date 2017/3/17
+        %li.content__right--body--time 05:00:00
+        %li.content__right--body--message 楽しい
     .content__right--bottom
       .content__right--bottom--center
         %input(name="text" type="text"placeholder="type a message")
