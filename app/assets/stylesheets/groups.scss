@@ -84,25 +84,56 @@
           font-weight: bold;
       }
 
-      &--date{
-      padding-top: 43px;
-      padding-left: 10px;
-      color: #999;
-      float: left;
-      font-size: 12px;
+      &--date {
+        padding-top: 43px;
+        padding-left: 10px;
+        color: #{$gray};
+        float: left;
+        font-size: 12px;
+      }
+
+      &--time{
+        float: left;
+        padding-top: 43px;
+        padding-left: 5px;
+        color: #{$gray};
+        float: left;
+        font-size: 12px;
       }
 
       &--message{
-      clear: both;
-      padding-left: 38px;
-      padding-top: 10px;
-      font-size: 15px;
+        clear: both;
+        padding-left: 40px;
+        padding-top: 10px;
+        font-size: 14px;
+        color: #434a54;
       }
+
+
       &--index{
       padding-top: 40px;
       padding-left: 38px;
       clear: both;
+      font-weight: bold;
+      float: left;
       }
+
+      &--dating{
+        padding-top: 40px;
+        padding-left: 11px;
+        font-size: 12px;
+        float: left;
+        color: #{$gray};
+      }
+
+      &--hour{
+        float: left;
+        padding-top: 40px;
+        padding-left: 5px;
+        font-size: 12px;
+        color: #999;
+      }
+
     }
 
     &--bottom{
@@ -174,4 +205,5 @@
       color: white;
       float: right;
     }
+
 }
