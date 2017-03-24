@@ -7,5 +7,6 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+    %header(class="header-nav")
     = render 'common/header'
     = yield
