@@ -6,27 +6,32 @@
       %i.fa.fa-gear
       .content__bar--side--left
         %ul
-          %li.content__bar--side--left--group div
-          %li.content__bar--side--left--index yasui
-          %li.content__bar--side--left--meeting フットサル部
-          %li.content__bar--side--left--index iwasaki
+          %li
+            %p.group-name div
+            %p.group-members yasui
+          %li.space
+            %p.group-name フットサル部
+            %p.group-members iwasaki
   .content__right
     .content__right--header
       .content__right--header--edit
         .content__right--header--edit--form Edit
       .content__right--header--name takatoグループ
       %ul
-        %li.content__right--header--user menbers: yasui
-    .content__right--body.clearfix 
+        %li.content__right--header--user
+          %p Members: yasui
+    .content__right--body
       %ul
-        %li.content__right--body--name tabata
-        %li.content__right--body--date 2017/3/16
-        %li.content__right--body--time 04:53:06
-        %li.content__right--body--message chat-spaceまだ？
-        %li.content__right--body--index フットサル
-        %li.content__right--body--date 2017/3/17
-        %li.content__right--body--time 05:00:00
-        %li.content__right--body--message 楽しい
+        %li
+          %h3.username tabata
+          %p.date 2017/3/16
+          %p.time 04:53:06
+          %p.message chat-spaceまだ？
+        %li
+          %h3.group-name フットサル
+          %p.date 2017/3/17
+          %p.time 05:00:00
+          %p.message 楽しい
     .content__right--bottom
       .content__right--bottom--center
         %input(name="text" type="text"placeholder="type a message")
