@@ -15,7 +15,7 @@
       .chat-group-form__field--right
         .chat-group-form__search.clearfix
           .chat-group-form__input
-            = collection_check_boxes(:post, :user_id, User.all, :id, :name) do |b|
+            = collection_check_boxes(:post, :user_ids, User.all, :id, :name) do |b|
               = b.label { b.check_box + b.text }
         #user-search-result
     .chat-group-form__field.clearfix
