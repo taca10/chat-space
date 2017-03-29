@@ -8,14 +8,13 @@
   box-sizing: border-box;
   height: 100vh;
 
-
   h1 {
     letter-spacing: 2px;
     font-size: 24px;
     text-align: center;
   }
 
-  .chat-group-form__errors {
+  &__errors {
     margin: 30px 0;
     padding: 20px 40px;
     border: 1px solid #ddd;
@@ -41,15 +40,21 @@
     }
   }
 
-  .chat-group-form__field {
+  &__field {
     margin-top: 30px;
 
-    .chat-group-form__field--left {
+    &--left {
       float: left;
       width: 30%;
       padding-right: 20px;
       padding-left: 20px;
       box-sizing: border-box;
+    }
+
+     &:after{
+    clear: both;
+    display: block;
+    content: "";
     }
 
     .chat-group-form__field--right {
@@ -77,7 +82,7 @@
     padding: 0 15px;
     line-height: 50px;
     font-size: 14px;
-    border-bottom: 1px solid #ddd;
+    // border-bottom: 1px solid #ddd;
 
     .chat-group-user__name {
       float: left;
