@@ -23,7 +23,7 @@
 
         &--left {
         padding-left: 20px;
-        padding-top: 60px;
+        padding-top: 40px;
 
           &--chat {
 
@@ -172,23 +172,24 @@
       color: #999;
      }
 
-    .fa.fa-pencil-square-o{
+    
+
+    .fa.fa-gear{
       position: absolute;
-      right: 43px;
-      top: 32px;
+      right: 13px;
+      top: 34px;
       line-height: 30px;
       font-size: 20px;
       color: $white;
       float: right;
     }
-
-    .fa.fa-gear{
-      position: absolute;
-      right: 20px;
-      top: 32px;
+    .fa.fa-pencil-square-o{
       line-height: 30px;
       font-size: 20px;
       color: $white;
       float: right;
+      position: absolute;
+      top: 35px;
+      left: 245px;
     }
 }

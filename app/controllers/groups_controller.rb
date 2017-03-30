@@ -12,8 +12,12 @@ class GroupsController < ApplicationController
     redirect_to  controller: :messages, action: :index
   end
 
-   def group_params
-      params.require(:group).permit(:name, {user_ids: []} )
-   end
+  def edit
+
+  end
+
+  def group_params
+    params.require(:group).permit(:name, {user_ids: []} )
+  end
 
 end
