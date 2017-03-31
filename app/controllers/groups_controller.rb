@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   def index
-
+    @groups = Group.all
   end
 
   def new
@@ -8,8 +8,8 @@ class GroupsController < ApplicationController
   end
 
   def create
-    Group.create(group_params)
-    redirect_to  controller: :messages, action: :index
+    group = Group.create(group_params)
+    redirect_to  controller: :groups, action: :index
   end
 
   def edit

@@ -2,17 +2,19 @@
   .content__bar
     .content__bar--side
       .content__bar--side--name takato
-      =link_to new_group_path do
+      = link_to new_group_path do
         %i.fa.fa-pencil-square-o
-      =link_to edit_group_path(@group) do
-        %i.group__user__icon--left.fa.fa-gear
+      = link_to edit_group_path(@groups) do
+        %i.fa.fa-gear
       .content__bar--side--left
         %ul.content__bar--side--left--chat
           %li.content__bar--side--left--chat--one
-            - @group.each do |group|
-              %p.user-group
-                = group.name
+            %p.group-name
+              = render partial:'common/group', collection: @groups
+            %p.group-members
           %li.content__bar--side--left--chat--one
+            %p.user-group
+            %p.group-members
   .content__right
     .content__right--header
       .content__right--header--edit
