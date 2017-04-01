@@ -1,5 +1,6 @@
-.content__bar--side--left
-  %ul.content__bar--side--left--chat
-    %li.content__bar--side--left--chat--one
-      %p.user-group
-        = group.name
+= link_to  group_messages_path(group.id), method: :get do
+  .content__bar--side--left
+    %ul.content__bar--side--left--chat
+      %li.content__bar--side--left--chat--one
+        %p.user-group
+          = group.name
