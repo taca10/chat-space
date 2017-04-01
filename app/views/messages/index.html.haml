@@ -4,7 +4,7 @@
       .content__bar--side--name takato
       = link_to new_group_path do
         %i.fa.fa-pencil-square-o
-      = link_to  edit_user_registration_path do
+      = link_to edit_user_registration_path do
         %i.fa.fa-gear
       .content__bar--side--left
         %ul.content__bar--side--left--chat
@@ -17,7 +17,7 @@
             %p.group-members
   .content__right
     .content__right--header
-      = link_to edit_group_path(@group),method: :get do
+      = link_to edit_group_path(@group) do
         .content__right--header--edit
           .content__right--header--edit--form
             Edit
