@@ -2,16 +2,19 @@
   .content__bar
     .content__bar--side
       .content__bar--side--name takato
-      %i.fa.fa-pencil-square-o
-      %i.fa.fa-gear
+      = link_to new_group_path do
+        %i.fa.fa-pencil-square-o
+      = link_to edit_group_path(@groups) do
+        %i.fa.fa-gear
       .content__bar--side--left
         %ul.content__bar--side--left--chat
           %li.content__bar--side--left--chat--one
-            %p.group-name div
-            %p.group-members yasui
+            %p.group-name
+              = render partial:'common/group', collection: @groups
+            %p.group-members
           %li.content__bar--side--left--chat--one
-            %p.user-group フットサル部
-            %p.group-members iwasaki
+            %p.user-group
+            %p.group-members
   .content__right
     .content__right--header
       .content__right--header--edit
