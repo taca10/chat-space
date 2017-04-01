@@ -14,7 +14,7 @@
           = f.label :チャットメンバーを追加
       .chat-group-form__field--right
         .chat-group-form__input
-          = f.collection_check_boxes(:user_ids, @user, :id, :name)
+          = f.collection_check_boxes(:user_ids, @users, :id, :name)
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
         .chat-group-form__field--left--label
