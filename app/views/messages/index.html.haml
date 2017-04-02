@@ -25,7 +25,7 @@
         = @group.name
         .content__right--header--user 
           member
-          -@users.each do |user|
+          - @users.each do |user|
             = user.name
     .content__right--body
       %ul.content__right--body--chat
