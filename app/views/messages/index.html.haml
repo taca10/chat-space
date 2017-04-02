@@ -21,8 +21,12 @@
         .content__right--header--edit
           .content__right--header--edit--form
             Edit
-      .content__right--header--name takatoグループ
-      .content__right--header--user Members: yasui
+      .content__right--header--name
+        = @group.name
+        .content__right--header--user 
+          member
+          -@users.each do |user|
+            = user.name
     .content__right--body
       %ul.content__right--body--chat
         %li.content__right--body--chat--one

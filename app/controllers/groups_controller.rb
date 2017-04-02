@@ -3,7 +3,7 @@ class GroupsController < ApplicationController
   before_action :get_group, only: [:edit,:update]
 
   def index
-    @groups = current_user.groups
+    @groups = current_user.groups.order('created_at DESC')
   end
 
   def new
@@ -22,12 +22,14 @@ class GroupsController < ApplicationController
   end
 
   def edit
+    get_group
     @users = User.all
   end
 
   def update
+    get_group
     if @group.update(group_params)
-       redirect_to root_path, notice: "グループ編集に成功しました"
+       redirect_to group_messages_path(@group.id) , notice: "グループ編集に成功しました"
     else
       flash.now[:alert] = 'グループは編集されませんでした'
       render :new
