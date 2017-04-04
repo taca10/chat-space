@@ -1,20 +1,5 @@
 .content
-  .content__bar
-    .content__bar--side
-      .content__bar--side--name takato
-      = link_to new_group_path do
-        %i.fa.fa-pencil-square-o
-      = link_to edit_user_registration_path do
-        %i.fa.fa-gear
-      .content__bar--side--left
-        %ul.content__bar--side--left--chat
-          %li.content__bar--side--left--chat--one
-            %p.group-name
-              = render partial:'common/group', collection: @groups
-            %p.group-members
-          %li.content__bar--side--left--chat--one
-            %p.user-group
-            %p.group-members
+  = render partial: 'common/sider', locals: {groups: @groups}
   .content__right
     .content__right--header
       = link_to edit_group_path(@group) do
@@ -23,7 +8,7 @@
             Edit
       .content__right--header--name
         = @group.name
-        .content__right--header--user 
+        .content__right--header--user
           member
           - @users.each do |user|
             = user.name
@@ -40,7 +25,7 @@
           %p.time 05:00:00
           %p.message 楽しい
     .content__right--bottom
-      %input(name="text" type="text"placeholder="type a message")
+      = form_for [@group, @message] do |f|
+        = f.text_field :text, placeholder: 'type a message', value: ''
         %i.fa.fa-photo
-      .content__right--bottom--form
-        %p Send
+        = f.submit 'Sent', class: 'form'
