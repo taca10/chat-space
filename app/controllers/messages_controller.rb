@@ -9,12 +9,13 @@ class MessagesController < ApplicationController
     @messages = @group.messages
   end
 
-  def new
-  end
-
   def create
-  Message.create(message_params)
-  redirect_to  group_messages_path(@group)
+    @message = Message.new(message_params)
+    if @message.save
+      redirect_to  group_messages_path(@group), notice: 'メッセージ送信に成功しました'
+    else
+      redirect_to  group_messages_path(@group), alert: 'メッセージ送信に成功しました'
+    end
   end
 
   private

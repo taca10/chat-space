@@ -13,7 +13,7 @@
           - @users.each do |user|
             = user.name
     .content__right--body
-      = render partial: 'common/chat', locals: {message: @messages}
+      = render @messages
     .content__right--bottom
       = form_for [@group, @message] do |f|
         = f.text_field :text, placeholder: 'type a message', value: ''
