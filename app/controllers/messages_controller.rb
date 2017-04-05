@@ -1,30 +1,36 @@
 class MessagesController < ApplicationController
 
   before_action :get_group, only: [:index, :create]
+  before_action :set_group, only: [:index, :create]
 
   def index
-    @groups = current_user.groups.order('created_at DESC')
-    @users = @group.users
-    @message = Message.new
-    @messages = @group.messages
+
   end
 
   def create
-    @message = Message.new(message_params)
+    @message = current_user.messages.new(message_params)
     if @message.save
       redirect_to  group_messages_path(@group), notice: 'メッセージ送信に成功しました'
     else
-      redirect_to  group_messages_path(@group), alert: 'メッセージ送信に成功しました'
+      flash.now[:alert] = 'グループは作成されませんでした'
+      render :index
     end
   end
 
   private
   def message_params
-    params.require(:message).permit(:text).merge(group_id: params[:group_id], user_id: current_user.id)
+    params.require(:message).permit(:text).merge(group_id: params[:group_id])
   end
 
   def get_group
-  @group = Group.find(params[:group_id])
+    @group = Group.find(params[:group_id])
+  end
+
+  def set_group
+    @groups = current_user.groups.order('created_at DESC')
+    @users = @group.users
+    @message = Message.new
+    @messages = @group.messages
   end
 end
 

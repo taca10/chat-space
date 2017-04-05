@@ -9,11 +9,13 @@
       .content__right--header--name
         = @group.name
         .content__right--header--user
-          member
-          - @users.each do |user|
-            = user.name
+          - if @users.present?
+            member
+            - @users.each do |user|
+              = user.name
     .content__right--body
-      = render @messages
+      - if @messages.present?
+        = render @messages
     .content__right--bottom
       = form_for [@group, @message] do |f|
         = f.text_field :text, placeholder: 'type a message', value: ''
