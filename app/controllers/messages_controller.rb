@@ -21,9 +21,6 @@ class MessagesController < ApplicationController
     params.require(:message).permit(:text).merge(group_id: params[:group_id])
   end
 
-  def get_group
-  end
-
   def set_group
     @group = Group.find(params[:group_id])
     @groups = current_user.groups.order('created_at DESC')
