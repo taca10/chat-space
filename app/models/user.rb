@@ -5,7 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :group_users
+  has_many :messages
   has_many :groups, through: :group_users
 
   validates :id, presence: true
+  validates :name, presence: true
 end

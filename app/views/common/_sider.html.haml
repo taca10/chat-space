@@ -1,7 +1,7 @@
-.content
-  .content__bar
-    .content__bar--side
-      .content__bar--side--name takato
+.content__bar
+  .content__bar--side
+    .content__bar--side--name
+      = current_user.name
       = link_to new_group_path do
         %i.fa.fa-pencil-square-o
       = link_to edit_user_registration_path do
@@ -10,7 +10,7 @@
         %ul.content__bar--side--left--chat
           %li.content__bar--side--left--chat--one
             %p.group-name
-              = render @groups
+              = render  @groups
             %p.group-members
           %li.content__bar--side--left--chat--one
             %p.user-group
