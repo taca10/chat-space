@@ -21,9 +21,15 @@ gem 'devise'
 group :development, :test do
   gem 'byebug'
   gem 'pry-rails'
+  gem 'rspec-rails', "~> 3.1.0"
+  gem 'factory_girl_rails', "~> 4.4.1"
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+end
+
+group :test do
+  gem 'faker'
 end
