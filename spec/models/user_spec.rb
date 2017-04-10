@@ -6,9 +6,14 @@ describe User do
       expect(user).to be_valid
     end
     it "is invalid without a name" do
-     user =  build(:user, name: "")
+     user =  build(:user, name: nil)
      user.valid?
      expect(user.errors[:name]).to include("を入力してください。")
+    end
+    it "is invalid without email" do
+      user = build(:user, email: nil)
+      user.valid?
+      expect(user.errors[:email]).to include("を入力してください。")
     end
   end
 end
