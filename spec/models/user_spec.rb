@@ -1,7 +1,8 @@
 require 'rails_helper'
+
 describe User do
   describe '#create' do
-    it "is valid with a id, nickname, email, password, password_confirmation" do
+    it "is valid user" do
       user = build_stubbed(:user)
       expect(user).to be_valid
     end
@@ -40,6 +41,11 @@ describe User do
       user = build(:user, password: "00000", password_confirmation: "00000")
       user.valid?
       expect(user.errors[:password][0]).to include("は6文字以上で入力してください。")
+    end
+    it "is invalid with a password no match password_confirmation " do
+      user = build(:user, password: "00000000", password_confirmation: "00000001")
+      user.valid?
+      expect(user.errors[:password_confirmation]).to include("とパスワードの入力が一致しません。")
     end
   end
 end
