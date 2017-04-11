@@ -8,6 +8,5 @@ class User < ApplicationRecord
   has_many :messages
   has_many :groups, through: :group_users
 
-  validates :id, presence: true
-  validates :name, presence: true
+  validates :name, presence: true, length: { maximum: 6 }
 end
