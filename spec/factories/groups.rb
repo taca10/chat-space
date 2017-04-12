@@ -1,6 +1,7 @@
-FactoryGirl.difine do
+FactoryGirl.define do
 
   factory :group do
-     name        { Faker::name.name }
+     name        "div"
+     group_id    "3"
   end
 end
