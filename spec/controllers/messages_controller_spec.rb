@@ -2,11 +2,18 @@ require 'rails_helper'
 
 describe MessagesController, type: :controller do
 
-  describe 'GET #index' do
-     it "assigns the requested contact to @group" do
-      group = create(:group)
-      get :index, id: group
-      expect(assigns(:group)).to eq group
+  let(:group){create(:group)}
+  let(:user){create(:user)}
+  let(:message){build(:message)}
+
+  before do
+    sign_in user
+  end
+
+  describe 'Get#index' do
+    it "redirects index view" do
+      get :index, group_id: group.id
+      expect(response).to render_template :index
     end
   end
 end

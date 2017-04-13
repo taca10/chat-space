@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
 
-  before_action :set_group, only: [:index, :create]
-  before_action :set_message, only: [:index, :create]
+  # before_action :set_group, only: [:index, :create]
+  # before_action :set_message, only: [:index, :create]
 
   def index
 
