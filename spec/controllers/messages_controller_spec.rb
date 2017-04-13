@@ -19,5 +19,11 @@ describe MessagesController, type: :controller do
       get :index, id: message, group_id: group.id
       expect(assigns(:group)).to eq group
     end
+    it "assigns the requested contact to @groups" do
+      @groups = user.groups.first
+      get :index, id: message, group_id: group.id
+      groups = user.groups
+      expect(assigns(:groups)).to eq groups
+    end
   end
 end
