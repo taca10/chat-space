@@ -1,6 +1,7 @@
 FactoryGirl.define do
 
   factory :message do
+    id             "1"
     text           { Faker::Lorem.word }
     image          { Faker::Avatar.image }
     group_id       "1"
