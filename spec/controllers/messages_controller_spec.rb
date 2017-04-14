@@ -57,6 +57,10 @@ describe MessagesController, type: :controller do
           post :create, group_id: group.id, message: attributes_for(:message, text: "")
         }.not_to change(Message, :count)
       end
+      it "redirects to message#index" do
+        post :create, group_id: group.id, message: attributes_for(:message, text: "")
+        expect(response).to render_template :index
+      end
     end
   end
 end
