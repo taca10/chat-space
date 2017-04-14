@@ -40,11 +40,15 @@ describe MessagesController, type: :controller do
   end
 
   describe 'Post#create' do
-    context "with valid attributes" do
-      it "message saves" do
+    context "save valid attributes" do
+      it "message save" do
         expect{
           post :create, group_id: group.id, message: attributes_for(:message)
         }.to change(Message, :count).by(1)
+      end
+      it "redirects to message#index" do
+        post :create, group_id: group.id, message: attributes_for(:message)
+        expect(response).to redirect_to group_messages_path
       end
     end
   end
