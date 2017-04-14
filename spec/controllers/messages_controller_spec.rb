@@ -51,5 +51,12 @@ describe MessagesController, type: :controller do
         expect(response).to redirect_to group_messages_path
       end
     end
+    context "not save invalid attributes" do
+      it "message not save" do
+        expect{
+          post :create, group_id: group.id, message: attributes_for(:message, text: "")
+        }.not_to change(Message, :count)
+      end
+    end
   end
 end
