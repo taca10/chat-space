@@ -38,4 +38,14 @@ describe MessagesController, type: :controller do
       expect(assigns(:messages)).to eq messages
     end
   end
+
+  describe 'Post#create' do
+    context "with valid attributes" do
+      it "message saves" do
+        expect{
+          post :create, group_id: group.id, message: attributes_for(:message)
+        }.to change(Message, :count).by(1)
+      end
+    end
+  end
 end
