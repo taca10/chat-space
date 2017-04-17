@@ -36,31 +36,24 @@ describe MessagesController, type: :controller do
 
   describe 'Post#create' do
     context "save valid attributes" do
-      before do
-        @params = { group_id: group.id, message: attributes_for(:message) }
-      end
+      let(:params) { post :create, group_id: group.id, message: attributes_for(:message) }
       it "message save" do
-        expect{
-          post :create, @params
+        expect{ params
         }.to change(Message, :count).by(1)
       end
-      before do
-        post :create, group_id: group.id, message: attributes_for(:message)
-      end
       it "redirects to message#index" do
+        params
         expect(response).to redirect_to group_messages_path
       end
     end
     context "not save invalid attributes" do
-      before do
-         post :create, group_id: group.id, message: attributes_for(:message, text: "")
-      end
+      let(:params) { post :create, group_id: group.id, message: attributes_for(:message, text: "") }
       it "message not save" do
-        expect{
-
+        expect{ params
         }.not_to change(Message, :count)
       end
       it "redirects to message#index" do
+        params
         expect(response).to render_template :index
       end
     end
