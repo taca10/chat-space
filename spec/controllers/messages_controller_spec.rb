@@ -53,15 +53,14 @@ describe MessagesController, type: :controller do
     end
     context "not save invalid attributes" do
       before do
-        @save_not_params = { group_id: group.id, message: attributes_for(:message, text: "") }
+         post :create, group_id: group.id, message: attributes_for(:message, text: "")
       end
       it "message not save" do
         expect{
-          post :create, @save_not_params
+
         }.not_to change(Message, :count)
       end
       it "redirects to message#index" do
-        post :create, @save_not_params
         expect(response).to render_template :index
       end
     end
