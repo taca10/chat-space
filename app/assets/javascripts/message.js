@@ -1,33 +1,31 @@
 $(function() {
   function buildHTML(message) {
-    var html = $('<ul class="content__right--body--chat">').append('<li class="content__right--body--chat--one"> </li>').append('<h3 class="date"> </h3>').append('<p class="date"> </p>').append('<p class="message"> </p>');
+    var html = `<ul class="content__right--body--chat"><li class="content__right--body--chat--one"><h3 class="username"> ${message.name} </h3> <p class="date"> ${message.created_at} </p> <p class="message"> ${message.text} </p> </li> </ul>`
     return html;
   }
 
-  $('.js-form').on('submit', function(e) {
+  $('#new_message').on('submit', function(e) {
     e.preventDefault();
-    var textField = $('.js-form__text-field');
-    var message = textField.val();
-
-    // var fd = new FormData($('.js_form').get(0))
+    var message = $('#message_text').val();
+    var formdata = new FormData($('.js-form').get(0))
     // fd.append('body', $('.form').val())
     $.ajax({
       type: 'POST',
-      url: location.href
-      data: {
-        message: {
-          text: message
-        }
-      },
-      dataType: 'json'
+      url: location.href,
+      data: formdata,
+      dataType: 'json',
+      processData: false,
+      contentType: false
     })
     .done(function(data) {
       var html = buildHTML(data);
       $('.content__right--body').append(html);
-      textField.val('');
+      $('#message_text').val("");
+      $('input').prop('disabled', false);
     })
     .fail(function() {
-      alert('error');
+      alert(' メッセージが入力されていません');
     });
+      $('#message_text').prop('disabled', false);
   });
 });
