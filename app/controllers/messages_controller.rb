@@ -11,10 +11,11 @@ class MessagesController < ApplicationController
     @message = current_user.messages.new(message_params)
     if @message.save
       respond_to do |format|
-        format.html { redirect_to :group_messages, notice: 'メッセージ送信に成功しました。'}
-        format.json { render json: @message}
+        format.html { redirect_to group_messages_path(@message.group_id)
+        }
+        format.json 
       end
-      # redirect_to  group_messages_path(@group), notice: 'メッセージ送信に成功しました'
+        # flash[:notice] = "メッセージが送信されました！"
     else
       flash.now[:alert] = 'グループは作成されませんでした'
       render :index
