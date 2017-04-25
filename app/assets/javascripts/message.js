@@ -19,7 +19,7 @@ $(function() {
     .done(function(data) {
       var html = buildHTML(data);
       $('.content__right--body').append(html);
-      $('form__text-field').val("");
+      $('#message_text').val("");
       $('input').prop('disabled', false);
     })
     .fail(function() {
