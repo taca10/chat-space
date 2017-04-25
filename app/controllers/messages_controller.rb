@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
       respond_to do |format|
         format.html { redirect_to group_messages_path(@message.group_id)
         }
-        format.json 
+        format.json { render json: @message.json }
       end
         # flash[:notice] = "メッセージが送信されました！"
     else

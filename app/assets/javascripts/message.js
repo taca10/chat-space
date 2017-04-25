@@ -4,11 +4,10 @@ $(function() {
     return html;
   }
 
-  $('#new_message').on('submit', function(e) {
+  $('.js-form').on('submit', function(e) {
     e.preventDefault();
-    var message = $('#message_text').val();
+    var message = $('#form__text-field').val();
     var formdata = new FormData($('.js-form').get(0))
-    // fd.append('body', $('.form').val())
     $.ajax({
       type: 'POST',
       url: location.href,
@@ -20,12 +19,12 @@ $(function() {
     .done(function(data) {
       var html = buildHTML(data);
       $('.content__right--body').append(html);
-      $('#message_text').val("");
+      $('form__text-field').val("");
       $('input').prop('disabled', false);
     })
     .fail(function() {
       alert(' メッセージが入力されていません');
+      $('input').prop('disabled', false);
     });
-      $('#message_text').prop('disabled', false);
   });
 });
