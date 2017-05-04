@@ -23,7 +23,8 @@
       .chat-group-form__field--right
         #chat-group-users
           #chat-group-users.chat-group-user.clearfix
-            =f.hidden_field :user_ids, value: current_user.id, id: "users-value"
+            =f.hidden_field "user_ids][", value: current_user.id, id: "users-value"
+            =binding.pry
             =current_user.name
             %span.chat-group-user__name
       .chat-group-form__field--left
