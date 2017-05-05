@@ -3,7 +3,7 @@ $(document).on('turbolinks:load', function(){
     function buildHTML(user){
        var html =  `<li class = "add-user clearfix">
                    <div class = "chat-group-user__name"> ${user.name}  </div>
-                  <button id ="add_button" type = "button" data-user-name = "${ user.name}" data-user-id = "${user.id}" > 追加 </button>
+                  <button id ="add_button" type = "button" data-user-name = "${ user.name }" data-user-id = "${user.id}" > 追加 </button>
                   </li>`
       return html
     };
