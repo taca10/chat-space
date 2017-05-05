@@ -3,7 +3,7 @@ $(document).on('turbolinks:load', function(){
     function buildHTML(user){
        var html =  `<li class = "add-user clearfix">
                    <div class = "chat-group-user__name"> ${user.name}  </div>
-                  <button id ="add_button" type = "button" data-user-name = "${ user.name }" data-user-id = "${user.id}" > 追加 </button>
+                  <a id ="add_button"  data-user-name = "${ user.name }" data-user-id = "${user.id}" > 追加 </a>
                   </li>`
       return html
     };
@@ -12,7 +12,7 @@ $(document).on('turbolinks:load', function(){
       var html =  `<li class = "remove-user clearfix">
                    <input type = "hidden" name = "group[user_ids][]" value = " ${ id } ">
                    <p class = "chat-group-user__name"> ${ name } </p>
-                   <button id = "remove_button"> 削除 </button>
+                   <a id = "remove_button"> 削除 </a>
                    </li>`;
 
       return html;
