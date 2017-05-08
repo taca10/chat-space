@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load', function(){
   $(function() {
-    function buildHTML(user){
+    function buildHTML(user) {
        var html =  `<li class = "add-user clearfix">
                    <div class = "chat-group-user__name"> ${user.name}  </div>
                   <a id ="add_button"  data-user-name = "${ user.name }" data-user-id = "${user.id}" > 追加 </a>
@@ -19,28 +19,27 @@ $(document).on('turbolinks:load', function(){
     }
 
 
-      $("#user-search-field").on("keyup", function(e) {
-        input = $.trim($("#user-search-field").val());
-        $(".add-user").remove();
-        if (input.length !== 0) {
-          $.ajax({
-            type: 'GET',
-            url: '/users/search',
-            data: ("name=" + input),
-            dataType: 'json',
-          })
+    $('#user-search-field').on("keyup", function(e) {
+      input = $.trim($("#user-search-field").val());
+      $(".add-user").remove();
+      if (input.length !== 0) {
+        $.ajax({
+          type: 'GET',
+          url: '/users/search',
+          data: ("name=" + input),
+          dataType: 'json',
+        })
+        .done(function(data){
+          $.each(data, function(i, data){
+            html = buildHTML(data);
+            $('#list').append(html);
 
-          .done(function(data){
-            $.each(data, function(i, data){
-              html = buildHTML(data);
-              $('#list').append(html);
-
-            });
-          })
-
-          .fail(function(json){
-            alert("グループを作成してください。");
           });
+        })
+        .fail(function(json){
+          alert("グループを作成してください。");
+        });
+
         };
       });
       $(document).on('click', '#add_button', function(){
@@ -53,7 +52,7 @@ $(document).on('turbolinks:load', function(){
       });
 
       $(document).on('click','#remove_button',function(){
-        $(this).parent().remove();
+      $(this).parent().remove();
       });
   });
 });
