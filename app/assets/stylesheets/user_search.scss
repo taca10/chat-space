@@ -1,13 +1,14 @@
 #list {
-  @include clearfix();
   padding-top: 15px;
   margin: 0 auto;
   list-style: none;
   border-radius: 5px;
 }
 
-.li{
-  @include clearfix;
+.li :after{
+  clear: both;
+  display: block;
+  content: "";
 }
 
 
