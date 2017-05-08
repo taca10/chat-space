@@ -2,13 +2,13 @@ $(document).on('turbolinks:load', function(){
   $(function() {
     function buildHTML(user) {
        var html =  `<li class = "add-user clearfix">
-                   <div class = "chat-group-user__name"> ${user.name}  </div>
-                  <a id ="add_button"  data-user-name = "${ user.name }" data-user-id = "${user.id}" > 追加 </a>
+                   <div class = "chat-group-user__name"> ${ user.name }  </div>
+                  <a id ="add_button"  data-user-name = "${ user.name }" data-user-id = "${ user.id }" > 追加 </a>
                   </li>`
       return html
     };
 
-     function AddUserHtml(id, name){
+     function AddUserHtml(id, name) {
       var html =  `<li class = "remove-user clearfix">
                    <input type = "hidden" name = "group[user_ids][]" value = " ${ id } ">
                    <p class = "chat-group-user__name"> ${ name } </p>
@@ -30,10 +30,9 @@ $(document).on('turbolinks:load', function(){
           dataType: 'json',
         })
         .done(function(data){
-          $.each(data, function(i, data){
+          $.each(data, function(i, data) {
             html = buildHTML(data);
             $('#list').append(html);
-
           });
         })
         .fail(function(json){
@@ -42,7 +41,7 @@ $(document).on('turbolinks:load', function(){
 
         };
       });
-      $(document).on('click', '#add_button', function(){
+      $(document).on('click', '#add_button', function() {
         var id = $(this).data('user-id');
         var name = $(this).data('user-name');
         var user = $(this).parent();
@@ -51,8 +50,8 @@ $(document).on('turbolinks:load', function(){
         $('#chat-group-users').append(new_html);
       });
 
-      $(document).on('click','#remove_button',function(){
-      $(this).parent().remove();
+      $(document).on('click','#remove_button',function() {
+        $(this).parent().remove();
       });
   });
 });
