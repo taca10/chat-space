@@ -8,7 +8,7 @@ $(document).on('turbolinks:load', function(){
       return html
     };
 
-     function AddUserHtml(id, name) {
+    function AddUserHtml(id, name) {
       var html =  `<li class = "remove-user clearfix">
                    <input type = "hidden" name = "group[user_ids][]" value = " ${ id } ">
                    <p class = "chat-group-user__name"> ${ name } </p>
@@ -16,11 +16,10 @@ $(document).on('turbolinks:load', function(){
                    </li>`;
 
       return html;
-    }
+    };
 
-
-    $('#user-search-field').on("keyup", function(e) {
-      input = $.trim($("#user-search-field").val());
+    $('#group_user_search_field').on("keyup", function(e) {
+      input = $.trim($("#group_user_search_field").val());
       $(".add-user").remove();
       if (input.length !== 0) {
         $.ajax({
@@ -29,18 +28,17 @@ $(document).on('turbolinks:load', function(){
           data: ("name=" + input),
           dataType: 'json',
         })
-        .done(function(data){
+        .done(function(data) {
           $.each(data, function(i, data) {
             html = buildHTML(data);
             $('#list').append(html);
           });
         })
         .fail(function(json){
-          alert("グループを作成してください。");
+          alert('グループを作成してください。');
         });
-
-        };
-      });
+      };
+    });
       $(document).on('click', '#add_button', function() {
         var id = $(this).data('user-id');
         var name = $(this).data('user-name');
