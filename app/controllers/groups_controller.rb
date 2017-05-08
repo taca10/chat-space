@@ -12,7 +12,7 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = Group.new(name: group_params[:name], user_ids: group_params[:user_id])
+    @group = Group.new(group_params)
     if @group.save
       redirect_to root_path, notice: 'グループ作成に成功しました'
     else
@@ -36,7 +36,7 @@ class GroupsController < ApplicationController
 
   def group_params
     new_users_id = params[:group][:user_ids].uniq
-    params.require(:group).merge(user_id: new_users_id).permit(:name, {user_id: []} )
+    params.require(:group).merge(user_ids: new_users_id).permit(:name, { user_ids: [] } )
   end
 
   def get_group

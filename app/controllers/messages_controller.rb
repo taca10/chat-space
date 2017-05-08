@@ -30,8 +30,8 @@ class MessagesController < ApplicationController
 
   def set_group
     @group = Group.find(params[:group_id])
-    @groups = current_user.groups.includes(:messages).order('created_at DESC')
-    @users = @group.users
+    @groups = current_user.groups.includes(:messages)
+    @users = @group.users.includes(:messages)
   end
 
   def set_message
