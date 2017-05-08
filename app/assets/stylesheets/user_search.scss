@@ -6,10 +6,8 @@
   border-radius: 5px;
 }
 
-.li :after{
-  clear: both;
-  display: block;
-  content: "";
+.li{
+  @include clearfix;
 }
 
 
