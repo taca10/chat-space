@@ -10,22 +10,22 @@ $(document).on('turbolinks:load', function(){
 
     function AddUserHtml(id, name) {
       var html =  `<li class = "remove-user clearfix">
-                   <input type = "hidden" name = "group[user_ids][]" value = " ${ id } ">
-                   <p class = "chat-group-user__name"> ${ name } </p>
-                   <a id = "remove_button"> 削除 </a>
+                   <input type = 'hidden' name = 'group[user_ids][]'' value = " ${ id } ">
+                   <p class = 'chat-group-user__name'> ${ name } </p>
+                   <a id = 'remove_button'> 削除 </a>
                    </li>`;
 
       return html;
     };
 
-    $('#group_user_search_field').on("keyup", function(e) {
-      input = $.trim($("#group_user_search_field").val());
-      $(".add-user").remove();
+    $('#group_user_search_field').on('keyup', function(e) {
+      input = $.trim($('#group_user_search_field').val());
+      $('.add-user').remove();
       if (input.length !== 0) {
         $.ajax({
           type: 'GET',
           url: '/users/search',
-          data: ("name=" + input),
+          data: ('name=' + input),
           dataType: 'json',
         })
         .done(function(data) {

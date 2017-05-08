@@ -39,4 +39,3 @@ class MessagesController < ApplicationController
     @messages = @group.messages
   end
 end
-
