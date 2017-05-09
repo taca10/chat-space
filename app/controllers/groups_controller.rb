@@ -26,7 +26,7 @@ class GroupsController < ApplicationController
   end
 
   def update
-    if @group.update(group_params)
+    if @group.update(name: group_params[:name], user_ids: group_params[:user_id])
        redirect_to group_messages_path(@group.id) , notice: "グループ編集に成功しました"
     else
       flash.now[:alert] = 'グループは編集されませんでした'
@@ -35,7 +35,8 @@ class GroupsController < ApplicationController
   end
 
   def group_params
-    params.require(:group).permit(:name, {user_ids: []} )
+    new_users_id = params[:group][:user_ids].uniq
+    params.require(:group).merge(user_ids: new_users_id).permit(:name, { user_ids: [] } )
   end
 
   def get_group

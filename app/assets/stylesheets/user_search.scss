@@ -1,0 +1,41 @@
+#list {
+  padding-top: 15px;
+  margin: 0 auto;
+  list-style: none;
+  border-radius: 5px;
+}
+
+.li :after{
+  clear: both;
+  display: block;
+  content: "";
+}
+
+
+.add-user {
+  margin-top: 5px;
+  border-bottom: 1px solid #000;
+}
+
+
+#add_button {
+  float: right;
+  color: blue;
+}
+
+.remove-user {
+  @include clearfix();
+  width: 100vh;
+  list-style: none;
+  border-bottom: 1px solid #000;
+}
+
+#remove_button {
+  float: right;
+  color: red;
+}
+
+
+.chat-group-user {
+  padding-top: 15px;
+}
