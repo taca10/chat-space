@@ -19,5 +19,7 @@
     .content__right--bottom
       = form_for [@group, @message], html: { class: 'js-form' } do |f|
         = f.text_field :text, placeholder: 'type a message', value: '', class: 'form__text-field js-form__text-field'
-        %i.fa.fa-photo
+        %label.right-box__send--image
+          = f.file_field :image
+          %i.fa.fa-photo
         = f.submit 'Sent', class: 'form'

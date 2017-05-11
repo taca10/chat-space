@@ -121,6 +121,11 @@
               color: #434a54;
             }
 
+            img{
+              width: 150px;
+              height: 150px;
+            }
+
             .group-name{
             clear: both;
             font-weight: bold;
@@ -143,6 +148,10 @@
         height: 50px;
         float: left;
       }
+
+      #message_image{
+        display: none;
+       }
 
       .form{
         background-color: #38aef0;
