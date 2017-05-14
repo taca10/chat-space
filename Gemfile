@@ -16,6 +16,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rake', '< 11.0'
 gem 'carrierwave'
+gem 'fog'
+gem 'dotenv-rails', require: 'dotenv/rails-now'
 
 #devise設定
 gem 'devise'
