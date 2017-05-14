@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
       respond_to do |format|
         format.html { redirect_to group_messages_path(@message.group_id)
         }
-        format.json { render json: @message.json }
+        format.json
       end
         # flash[:notice] = "メッセージが送信されました！"
     else
@@ -25,7 +25,7 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:text).merge(group_id: params[:group_id])
+    params.require(:message).permit(:text, :image).merge(group_id: params[:group_id])
   end
 
   def set_group

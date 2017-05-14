@@ -6,3 +6,6 @@
       = message.created_at
     %p.message
       = message.text
+    - if message.image.present?
+      %p.image
+        = image_tag message.image.url
