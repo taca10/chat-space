@@ -25,6 +25,7 @@ $(document).on('turbolinks:load', function(){
       var html = buildHTML(data);
       $('.content__right--body').append(html);
       $('#message_text').val("");
+      $('#message_image').val("");
       $('input').prop('disabled', false);
     })
     .fail(function() {
