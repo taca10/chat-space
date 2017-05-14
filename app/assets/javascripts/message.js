@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load', function(){
   function buildHTML(message) {
     if (message.image) {
       var image = `<img src= ${ message.image } >`
@@ -12,7 +12,6 @@ $(function() {
 
   $('.js-form').on('submit', function(e) {
     e.preventDefault();
-    var message = $('#form__text-field').val();
     var formdata = new FormData($('.js-form').get(0))
     $.ajax({
       type:        'POST',
