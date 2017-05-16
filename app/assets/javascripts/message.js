@@ -33,9 +33,9 @@ $(document).on('turbolinks:load', function(){
       $('input').prop('disabled', false);
     });
   });
-  
-   setInterval(function() {
-    if ($('#message_text').val() !== 0); {
+
+  setInterval(function() {
+    if ($('#message_text').val() !== 0) {
       $.ajax({
         type: 'GET',
         url: location.href,
