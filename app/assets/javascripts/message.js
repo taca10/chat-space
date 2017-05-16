@@ -33,4 +33,21 @@ $(document).on('turbolinks:load', function(){
       $('input').prop('disabled', false);
     });
   });
+
+  var autoload = setInterval(function() {
+    if(document.URL.match("/messages")) {
+      $.ajax({
+        type: 'GET',
+        url: location.href,
+        dataType: 'json'
+      })
+      .done(function(data) {
+        buildHTML(data);
+      })
+      .fail(function() {
+        alert('error');
+      });
+    } else {
+      clearInterval(autoload);
+    }}, 5000);
 });
