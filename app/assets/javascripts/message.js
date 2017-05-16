@@ -34,8 +34,8 @@ $(document).on('turbolinks:load', function(){
     });
   });
 
-  setInterval(function() {
-    if ($('#message_text').val() !== 0) {
+  var autoload = setInterval(function() {
+    if(document.URL.match("/messages")) {
       $.ajax({
         type: 'GET',
         url: location.href,
@@ -47,6 +47,7 @@ $(document).on('turbolinks:load', function(){
       .fail(function() {
         alert('error');
       });
-    }
-  }, 5000)
+    } else {
+      clearInterval(autoload);
+    }}, 5000);
 });
