@@ -4,7 +4,10 @@ class MessagesController < ApplicationController
   before_action :set_message, only: [:index, :create]
 
   def index
-
+     respond_to do |format|
+      format.html
+      format.json { render json: @message}
+    end
   end
 
   def create

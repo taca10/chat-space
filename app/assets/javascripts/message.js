@@ -33,4 +33,20 @@ $(document).on('turbolinks:load', function(){
       $('input').prop('disabled', false);
     });
   });
+  
+   setInterval(function() {
+     if ($('#message_text').val() != 0); {
+      $.ajax({
+      type: 'GET',
+      url: location.href,
+      dataType: 'json'
+      })
+      .done(function(data){
+          buildHTML(data);
+      })
+      .fail(function() {
+        alert('error');
+      });
+    }
+  }, 5000)
 });
