@@ -15,11 +15,11 @@
 
 ### messagesテーブル
 |column               |type    |
-|:--|                 |------  |
-|text|                |text    |
-|image|               |string  |
-|user_id|             |integer |
-|group_id|            |integer |
+|:-----               |-----   |
+|text                 |text    |
+|image                |string  |
+|user_id              |integer |
+|group_id             |integer |
 
 ### アソシエーション
 + belongs_to user
@@ -38,7 +38,7 @@
 
 ###group_user テーブル
 |column                |type   |
-|:--                   |--     |
+|:--                   |----   |
 |group_id              |integer|
 |user_id               |integer|
 
